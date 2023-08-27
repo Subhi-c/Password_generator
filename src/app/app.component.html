@@ -1,0 +1,38 @@
+<main>
+  <div class="card">
+     <div>
+      <h1>Password Generator</h1>
+    </div>
+
+  <div>
+    <label>Password Length</label><br>
+    <input type="Number" id="input" #input (input)="Length(input.value)" />
+  </div>
+  <div  class="check">
+
+
+  <div> 
+    <label>Use Letters</label>
+    <input class="checkbox" type="checkbox" (change)="UseLetters()" />
+  </div>
+
+  <div> 
+    <label>Use Symbols</label>
+    <input class="checkbox" type="checkbox" (change)="UseSymbols()" />
+  </div>
+
+  <div> 
+    <label>Use Numbers</label>
+    <input class="checkbox" type="checkbox" (change)="UseNumbers()" />
+  </div>
+  </div>
+  <div>
+    <button (click) = "onButtonClick()" [disabled]="!(LengthofPassword
+    && (Letters || Numbers ||Symbols))">Generate!</button>
+  </div>
+  <div *ngIf="password"> 
+    <label>Your Password : </label>
+    <input class="password" type="text" [value]="password" />
+  </div>
+  </div>
+</main>
